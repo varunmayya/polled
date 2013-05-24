@@ -1,0 +1,2 @@
+module HomefrontHelper
+end
