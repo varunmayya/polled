@@ -20,5 +20,7 @@ has_many :epolls
   def password_required?
     (authentications.empty? || !password.blank?) && super
   end
+  
 
+  
 end

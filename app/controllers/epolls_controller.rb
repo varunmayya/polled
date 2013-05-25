@@ -35,7 +35,13 @@ class EpollsController < ApplicationController
 
   # GET /epolls/1/edit
   def edit
-    @epoll = Epoll.find(params[:id])
+    
+    unless Epoll.find(params[:id]).user_id.to_i == current_user.id
+        redirect_to request.referer
+      end
+      
+      @epoll = Epoll.find(params[:id])
+    
   end
 
   # POST /epolls
@@ -73,6 +79,10 @@ class EpollsController < ApplicationController
   # DELETE /epolls/1
   # DELETE /epolls/1.json
   def destroy
+    
+if Epoll.find(params[:id]).user_id.to_i == current_user.id
+
+        
     @epoll = Epoll.find(params[:id])
     @epoll.destroy
 
@@ -80,5 +90,8 @@ class EpollsController < ApplicationController
       format.html { redirect_to epolls_url }
       format.json { head :no_content }
     end
+  else
+    redirect_to request.referer
   end
+end
 end
