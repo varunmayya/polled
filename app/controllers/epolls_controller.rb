@@ -10,6 +10,15 @@ class EpollsController < ApplicationController
       format.json { render json: @epolls }
     end
   end
+  
+  def mypolls
+    @epolls = current_user.epolls
+     respond_to do |format|
+        format.html # mypolls.html.erb
+        format.json { render json: @epolls }
+    end
+  end
+  
 
   # GET /epolls/1
   # GET /epolls/1.json

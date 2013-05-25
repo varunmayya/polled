@@ -3,16 +3,12 @@ class ApplicationController < ActionController::Base
   
   current_user||= User.new #i changed this
   
-  def count_opts
+  def count_poll
     if current_user
       counter = 0
-      @c = current_user.epolls 
-      @c.each do |i|
-         counter = counter + i.options.count
-      end
-      counter
+      @c = current_user.epolls.count 
     end
   end
   
-  helper_method :count_opts
+  helper_method :count_poll
 end
