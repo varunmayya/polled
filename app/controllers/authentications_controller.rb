@@ -25,6 +25,7 @@ class AuthenticationsController < ApplicationController
         sign_in_and_redirect(:user, user)
       else
         session[:omniauth] = omniauth.except('extra')
+        flash[:notice] = "We'll need some user info too!"
         redirect_to new_user_registration_path
       end
     end
@@ -36,6 +37,9 @@ class AuthenticationsController < ApplicationController
     @authentication.destroy
     flash[:notice] = "Successfully destroyed authentication."
     current_user.destroy
+    if session[:omniauth]
+    session[:omniauth] = nil
+  end
     sign_out
     redirect_to authentications_path
   end

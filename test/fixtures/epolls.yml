@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  question: MyString
+  timeout: 2013-05-25 12:50:58
+  status: MyString
+  user_id: 1
+
+two:
+  question: MyString
+  timeout: 2013-05-25 12:50:58
+  status: MyString
+  user_id: 1

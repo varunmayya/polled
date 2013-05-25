@@ -1,14 +1,16 @@
 Poll::Application.routes.draw do
+  resources :epolls
+
+
   resources :authentications
 
 
-  devise_for :users, path_names: {sign_in: "login", sign_out: "logout"},
+  devise_for :users, :path => '', path_names: {sign_in: "login", sign_out: "logout"},
   controllers: {omniauth_callbacks: "authentications", registrations: "registrations"}
 
   get "homefront/index"
 match 'users/auth/:provider/callback' => 'authentications#create'
 match '/auth/:provider/callback' => 'authentications#create'
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

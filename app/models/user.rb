@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
   
 has_many :authentications
-
+has_many :epolls
   
   def apply_omniauth(omniauth)
     #self.email = omniauth['user_info']['email'] if email.blank?
