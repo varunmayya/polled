@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   
 has_many :authentications
 has_many :epolls
+has_many :votes
   
   def apply_omniauth(omniauth)
     #self.email = omniauth['user_info']['email'] if email.blank?

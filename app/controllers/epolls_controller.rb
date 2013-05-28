@@ -24,7 +24,7 @@ class EpollsController < ApplicationController
   # GET /epolls/1.json
   def show
     @epoll = Epoll.find(params[:id])
-
+    @whichuser = User.find(@epoll.user_id).email
       
     respond_to do |format|
       format.html # show.html.erb

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130525083041) do
+ActiveRecord::Schema.define(:version => 20130528054924) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -32,7 +32,6 @@ ActiveRecord::Schema.define(:version => 20130525083041) do
 
   create_table "options", :force => true do |t|
     t.string   "name"
-    t.integer  "votes"
     t.integer  "epoll_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -57,5 +56,16 @@ ActiveRecord::Schema.define(:version => 20130525083041) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "votes", :force => true do |t|
+    t.integer  "option_id"
+    t.string   "location"
+    t.datetime "time"
+    t.string   "os"
+    t.string   "browser"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "user_id"
+  end
 
 end

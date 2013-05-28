@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  option_id: 1
+  location: MyString
+  time: 2013-05-27 18:13:24
+  os: MyString
+  browser: MyString
+
+two:
+  option_id: 1
+  location: MyString
+  time: 2013-05-27 18:13:24
+  os: MyString
+  browser: MyString
