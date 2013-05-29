@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
   
 has_many :authentications
-has_many :epolls
+has_many :epolls, :dependent => :destroy
 has_many :votes
   
   def apply_omniauth(omniauth)

@@ -11,7 +11,8 @@ class VotesController < ApplicationController
   def create
     @vote = Vote.new(params[:vote])
     @vote.user_id = current_user.id
-    @vote.location = request.location.city
+    @vote.location = request.location.country
+    @vote.city = request.location.city
     respond_to do |format|
       if @vote.save
         format.html { redirect_to request.referer, notice: 'Vote cast' }
