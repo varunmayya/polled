@@ -25,7 +25,8 @@ class EpollsController < ApplicationController
   def show
     @epoll = Epoll.find(params[:id])
     @whichuser = User.find(@epoll.user_id).email
-      
+    @vote = Vote.new
+    @vote.option_id = whichvote 
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @epoll }

@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 
+
 <h2> Question</h2>
 <p>
   <b>Question:</b>
@@ -15,10 +16,21 @@
 
 <div class="form_row">
 <h2>Options</h2>
-  <% @epoll.options.each do |option| %>
-    <br><%= radio_button_tag 'option', option, @current_option == option %>
-    <%= label_tag "#{option.name}" %>
-  <% end %>
+
+
+<%= semantic_form_for @vote do |f| %>
+  <%= f.inputs do%>
+   <%= f.input :option_id, :as => :radio , :collection => @epoll.options%>
+<%end%>
+
+<%unless vote_has_been_cast?%>
+  <%= f.actions %>
+<%else%>
+You've already cast your vote 
+<%end%>
+
+<% end %>
+
 </div>
 
 <br/>

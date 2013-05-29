@@ -1,6 +1,8 @@
 Poll::Application.routes.draw do
-  resources :epolls
+  get "votes/create"
 
+  resources :epolls
+  resources :votes
 
   resources :authentications
 

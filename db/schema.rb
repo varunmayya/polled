@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130528054924) do
+ActiveRecord::Schema.define(:version => 20130528071005) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -60,7 +60,6 @@ ActiveRecord::Schema.define(:version => 20130528054924) do
   create_table "votes", :force => true do |t|
     t.integer  "option_id"
     t.string   "location"
-    t.datetime "time"
     t.string   "os"
     t.string   "browser"
     t.datetime "created_at", :null => false
