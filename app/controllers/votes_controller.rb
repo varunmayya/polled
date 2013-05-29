@@ -8,11 +8,15 @@ class VotesController < ApplicationController
      #end
   end
   
-  def create
+  def create    
     @vote = Vote.new(params[:vote])
     @vote.user_id = current_user.id
+    @vote.epoll_id = Option.find(params[:vote][:option_id]).epoll.id
     @vote.location = request.location.country
     @vote.city = request.location.city
+    @vote.browser = browser.name
+    @vote.os = browser.platform
+    @vote.is_mobile = browser.mobile?
     respond_to do |format|
       if @vote.save
         format.html { redirect_to request.referer, notice: 'Vote cast' }

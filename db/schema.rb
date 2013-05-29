@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130529133703) do
+ActiveRecord::Schema.define(:version => 20130529150654) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -66,6 +66,8 @@ ActiveRecord::Schema.define(:version => 20130529133703) do
     t.datetime "updated_at", :null => false
     t.integer  "user_id"
     t.string   "city"
+    t.boolean  "is_mobile"
+    t.integer  "epoll_id"
   end
 
 end
