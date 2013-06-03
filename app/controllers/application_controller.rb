@@ -3,6 +3,9 @@ class ApplicationController < ActionController::Base
   
   current_user||= User.new #i changed this
   
+  
+  
+  
   def count_poll
     if current_user
       counter = 0

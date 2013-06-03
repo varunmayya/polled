@@ -1,8 +1,6 @@
 
 <p id="notice"><%= notice %></p>
-<%if current_user%>
-<%= link_to "Logout", destroy_user_session_path, method: :delete%>
-<%end%>
+
 <% if @authentications %>
   <% unless @authentications.empty? %>
     <p><strong>You have linked this Twitter account:</strong></p>
