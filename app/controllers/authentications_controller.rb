@@ -37,11 +37,12 @@ class AuthenticationsController < ApplicationController
     @authentication.destroy
     flash[:notice] = "Successfully destroyed authentication."
     current_user.destroy
+    current_user.epolls.destroy
     if session[:omniauth]
     session[:omniauth] = nil
   end
     sign_out
-    redirect_to authentications_path
+    redirect_to root_path
   end
   end
   def new

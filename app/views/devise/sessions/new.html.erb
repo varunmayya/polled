@@ -1,6 +1,8 @@
-<h2>Sign in</h2>
+<div class="center-text"><h2>Sign in using your Polled id or Twitter</h2></div>
 <p id ="alert"><%= alert%></p>
-
+<div class="boxed500">
+<div class="float_left boxmodel">
+	<span class="nbcolor">Sign in via Polled</span><br/><br/>
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
   <div><%= f.label :email %><br />
   <%= f.email_field :email, :autofocus => true %></div>
@@ -16,3 +18,15 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>
+
+<div class="float_right boxmodel">
+	<span class="nbcolor">Sign in via Twitter</span><br><br/><br/><br/>
+	<%@inst = current_user.authentications if current_user%>
+	<% unless @inst%>
+	<a href="/auth/twitter" class="auth_provider">
+	  <%= image_tag "twitter-bird-callout.png", :size => "140x114", :alt => "Twitter" %>
+	</a>
+	<%end%>
+</div>
+</div>

@@ -117,15 +117,14 @@ div {
 }
 
 .auth_provider img {
-  display: block;
+  display: block; margin:0 auto;
 }
 
 .auth_provider {
-  float: left;
+  margin:0 auto;
   text-decoration: none;
-  margin-right: 20px;
+
   text-align: center;
-  margin-bottom: 10px;
 }
 
 #navbar{width:100%;
@@ -142,7 +141,7 @@ background-image:image-url("navbar.png");
 #loginmenu a,#loginmenu a:visited,#loginmenu a:hover{color:white;background-color:none;}
 
 .footer{text-align:center; color:#575757; margin-top:50px; clear:both;}
-.container{width:1060px;margin:60px auto; }
+.container{width:1060px;margin:60px auto; min-height:300px; }
 h1{font-size:56px; color:#575757;}
 h2{color:#888}
 .center-text{text-align:center;}
@@ -162,6 +161,7 @@ margin-left:25px;
 
 box-shadow:0px 1px 2px #555;
 }
+.center-div{margin:0 auto;}
 .openmenu ul li
 {
 text-align:center;
@@ -181,3 +181,8 @@ text-decoration:none;
 color:white;
 }
 .openmenu ul li a:hover{text-decoration:underline;}
+.float_left{float:left;}
+.float_right{float:right;}
+
+.boxed500{width:550px; margin:100px auto;}
+.boxmodel{border-radius:5px; box-shadow:0px 2px 5px rgba(0,0,0,0.2); padding:10px; width:220px; height:200px;}

@@ -1,13 +1,16 @@
-<h2>Sign up</h2>
-
+<div class="center-text"><h2>Sign up with twitter</h2></div>
+<br/><br/><br/>
+<div class="center-div">
+<%if session[:omniauth]%>
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
 
-<%unless session[:omniauth]%>
+<!--<%unless session[:omniauth]%>
   <%= devise_error_messages! %>
 <%else%>
 We'll need some basic information from you to protect your identity.
-<%end%>
+<%end%>-->
 
+We'll need some basic information from you to protect your identity, send you updates on your polls and more!
   <div><%= f.label :email %><br />
   <%= f.email_field :email %></div>
 
@@ -20,4 +23,14 @@ We'll need some basic information from you to protect your identity.
   <div><%= f.submit "Sign up" %></div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<%else%>
+<% unless @authentications%>
+
+<a href="/auth/twitter" class="auth_provider">
+  <%= image_tag "twitter-bird-callout.png", :size => "140x114", :alt => "Twitter" %>
+
+</a>
+<%end%>
+
+<%end%>
+</div>
