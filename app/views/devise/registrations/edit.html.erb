@@ -41,8 +41,8 @@
         <div class="authentication">
           <%= image_tag "#{authentication.provider}_32.png", :size => "32x32" %>
           <div class="provider"><%= authentication.provider.titleize %></div>
-          <div class="uid"><%= authentication.uid %></div>
-          <%= link_to "X-Unlink this account and delete all my polls", authentication, :confirm => 'Are you sure you want to remove this authentication option?', :method => :delete, :class => "remove" %>
+          <div class="uid"><%= authentication.user_name %></div>
+          <%= link_to "X-Unlink this account and delete all my polls", authentication, :confirm => 'Are you sure you want to delete this account, unlink Twitter and delete all polls?', :method => :delete, :class => "remove" %>
         </div>
       <% end %>
       <div class="clear"></div>

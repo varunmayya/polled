@@ -1,16 +1,20 @@
 <div class="center-text"><h2>Sign up with twitter</h2></div>
 <br/><br/><br/>
 <div class="center-div">
+	<%if notice%>
+	<%=notice%>
+	<%end%>
 <%if session[:omniauth]%>
+<%if session[:flag] == 1 %>
+<%session[:flag] = nil%>
+<%else%>
+<%= devise_error_messages! %>
+
+<%end%>
+
+
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
 
-<!--<%unless session[:omniauth]%>
-  <%= devise_error_messages! %>
-<%else%>
-We'll need some basic information from you to protect your identity.
-<%end%>-->
-
-We'll need some basic information from you to protect your identity, send you updates on your polls and more!
   <div><%= f.label :email %><br />
   <%= f.email_field :email %></div>
 
