@@ -11,6 +11,7 @@ Poll::Application.routes.draw do
   controllers: {omniauth_callbacks: "authentications", registrations: "registrations"}
   match 'mypolls' => 'epolls#mypolls'
   get "homefront/index"
+  match 'statistics/:id' => 'epolls#statistics'
 match 'users/auth/:provider/callback' => 'authentications#create'
 match '/auth/:provider/callback' => 'authentications#create'
   # The priority is based upon order of creation:

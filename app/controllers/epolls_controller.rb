@@ -19,12 +19,17 @@ class EpollsController < ApplicationController
     end
   end
   
+  def statistics
+    @epoll = Epoll.find(params[:id])
+    @whichuser = User.find(@epoll.user_id).authentications.first.user_name
+  end
+  
 
   # GET /epolls/1
   # GET /epolls/1.json
   def show
     @epoll = Epoll.find(params[:id])
-    @whichuser = User.find(@epoll.user_id).email
+    @whichuser = User.find(@epoll.user_id).authentications.first.user_name
     @vote = Vote.new
     @vote.option_id = whichvote 
     respond_to do |format|

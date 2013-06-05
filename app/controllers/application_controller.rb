@@ -8,7 +8,6 @@ class ApplicationController < ActionController::Base
   
   def count_poll
     if current_user
-      counter = 0
       @c = current_user.epolls.count 
     end
   end
