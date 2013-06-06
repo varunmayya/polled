@@ -20,8 +20,13 @@ class EpollsController < ApplicationController
   end
   
   def statistics
+    if Epoll.find(params[:id]).user_id.to_i == current_user.id
     @epoll = Epoll.find(params[:id])
-    @whichuser = User.find(@epoll.user_id).authentications.first.user_name
+    @whichuser = User.find(@epoll.user_id).authentications.first.user_name if User.find(@epoll.user_id).authentications.exists?
+  else
+   raise ActiveRecord::RecordNotFound
+  end
+  
   end
   
 
@@ -29,7 +34,7 @@ class EpollsController < ApplicationController
   # GET /epolls/1.json
   def show
     @epoll = Epoll.find(params[:id])
-    @whichuser = User.find(@epoll.user_id).authentications.first.user_name
+    @whichuser = User.find(@epoll.user_id).authentications.first.user_name if User.find(@epoll.user_id).authentications.exists?
     @vote = Vote.new
     @vote.option_id = whichvote 
     respond_to do |format|

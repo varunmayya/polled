@@ -1,32 +1,29 @@
-<p id="notice"><%= notice %></p>
+<br/><div class="center-text"><p id="notice"><%= notice %></p></div>
 
 
 
-<h2> Question</h2>
-<p>
-  <b>Question:</b>
-  <%= @epoll.question %>
-</p>
+<br/> <br/> <div class="poll_icon"><%= @epoll.question %></div>
 
-<p>
-  <b>Created by:</b>
-  <%= @whichuser %>
-</p>
+<div class="indent_little">
+  Poll by @<%= @whichuser %> on <%=@epoll.created_at.to_date.to_formatted_s(:long_ordinal)%>.
+</div>
 
 
 <div class="form_row">
-<h2>Options</h2>
+	<br/><br/><br/>
 
 
 <%= semantic_form_for @vote do |f| %>
   <%= f.inputs do%>
-   <%= f.input :option_id, :as => :radio , :collection => @epoll.options%>
+   <%= f.input :option_id, :as => :radio , :collection => @epoll.options, :label => ""%>
+
 <%end%>
 
 <%unless vote_has_been_cast?%>
   <%= f.actions %>
 <%else%>
-You've already cast your vote 
+<div class="center-text">
+You've already cast your vote </div>
 <%end%>
 
 <% end %>
@@ -34,21 +31,13 @@ You've already cast your vote
 </div>
 
 <br/>
-<h2>Settings and Status</h2>
+<div class="center-text">
 <p>
-  <b>Timeout:</b>
-  <%= @epoll.timeout %>
-</p>
-
-<p>
-  <b>Status:</b>
-  <%= @epoll.status %>
-</p>
-
+  This poll ends on <%= @epoll.timeout.to_date.to_formatted_s(:long_ordinal) %>.
 
 
 
 
 
 <%= link_to 'Edit', edit_epoll_path(@epoll) %> |
-<%= link_to 'Back', epolls_path %>
+<%= link_to 'Back to all polls', epolls_path %></p></div>
