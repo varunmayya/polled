@@ -15,14 +15,15 @@
 
 <%= semantic_form_for @vote do |f| %>
   <%= f.inputs do%>
-   <%= f.input :option_id, :as => :radio , :collection => @epoll.options, :label => ""%>
-
+   <%= f.input :option_id, :as => :radio , :input_html => {:class => 'icheck-me'},  :collection => @epoll.options, member_label: Proc.new {|a| "<div class='custom_radio'>#{a.name}</div><br/><div class='bar_holder'><div class='bar_inner'><div class='progbar_value'>#{show_vote_parts(a)}</div></div><div class='fr'>#{pluralize(a.votes.count, 'vote')} </div></div>".html_safe},  :label =>""%>
 <%end%>
 
 <%unless vote_has_been_cast?%>
-  <%= f.actions %>
+ <%= f.actions do %>
+      <%= f.action :submit, :button_html => { :class => "submit_vote" } , :label => "Submit Vote"%>
+    <% end %>
 <%else%>
-<div class="center-text">
+<div class="center-text already-cast">
 You've already cast your vote </div>
 <%end%>
 
@@ -32,12 +33,12 @@ You've already cast your vote </div>
 
 <br/>
 <div class="center-text">
-<p>
+	<p class="ordinal">
   This poll ends on <%= @epoll.timeout.to_date.to_formatted_s(:long_ordinal) %>.
 
 
 
 
 
-<%= link_to 'Edit', edit_epoll_path(@epoll) %> |
+<%if current_user.id == @epoll.user_id%> <%= link_to 'Edit', edit_epoll_path(@epoll) %> | <%= link_to 'Statistics', statistics_path(@epoll) %><%end%> |
 <%= link_to 'Back to all polls', epolls_path %></p></div>

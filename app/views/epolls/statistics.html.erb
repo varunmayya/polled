@@ -13,11 +13,11 @@ Top City:
 	<%=@epoll.options.flat_map(&:votes).flat_map(&:city).max%>
 	<br/>
 Top Platform: 
-	<%=@epoll.options.flat_map(&:votes).flat_map(&:os).max.capitalize%>
+	<%=@epoll.options.flat_map(&:votes).flat_map(&:os).max%>
 <br/>
 
 Top Browser: 
-<%=@epoll.options.flat_map(&:votes).flat_map(&:browser).max.capitalize%>
+<%=@epoll.options.flat_map(&:votes).flat_map(&:browser).max%>
 <h2> Option breakdown </h2>
 
 <%@epoll.options.each do |option|%>

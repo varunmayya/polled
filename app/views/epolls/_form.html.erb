@@ -12,6 +12,7 @@
   <% end %>
 
 <%= notice %>
+<%= alert%>
 <h2>Poll Settings</h2>
   <div class="field">
     <%= f.label :question %><br />
@@ -37,7 +38,7 @@
         <%= f1.label :name %>
         <%= f1.text_field :name %>
 
-        <a href="#" class="remove">remove</a>
+        <a href="#" class="remove"  data-confirm="Are you sure?" >remove</a>
 
         <%= f1.hidden_field :id %>
         <%= f1.hidden_field :_destroy %>
@@ -56,5 +57,9 @@
 
 <script>
 $(document).ready(function(e) {
-  $('FORM').nestedFields();
+  $('form').nestedFields({
+  afterRemove: function(item) {
+    alert(item + ' was removed.');
+}
+});
 });</script>

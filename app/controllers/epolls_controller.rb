@@ -68,6 +68,7 @@ class EpollsController < ApplicationController
   # POST /epolls.json
   def create
     @epoll = Epoll.new(params[:epoll])
+
     @epoll.user_id = current_user.id
     respond_to do |format|
       if @epoll.save

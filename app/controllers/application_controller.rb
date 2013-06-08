@@ -42,9 +42,12 @@ end
    end
  end
      end
-  
+     
+     def show_vote_parts(a)
+        return (a.votes.count/@epoll.options.flat_map(&:votes).count.to_f) *100
+    end
 
-  
+  helper_method :show_vote_parts
   helper_method :count_poll
   helper_method :vote_has_been_cast?
   helper_method :whichvote

@@ -1,3 +1,57 @@
+
+.icheckbox_flat-red,
+.iradio_flat-red {
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    background: image-url("red.png") no-repeat;
+    border: none;
+    cursor: pointer;
+}
+
+.icheckbox_flat-red {
+    background-position: 0 0;
+}
+    .icheckbox_flat-red.checked {
+        background-position: -22px 0;
+    }
+    .icheckbox_flat-red.disabled {
+        background-position: -44px 0;
+        cursor: default;
+    }
+    .icheckbox_flat-red.checked.disabled {
+        background-position: -66px 0;
+    }
+
+.iradio_flat-red {
+    background-position: -88px 0;
+}
+    .iradio_flat-red.checked {
+        background-position: -110px 0;
+    }
+    .iradio_flat-red.disabled {
+        background-position: -132px 0;
+        cursor: default;
+    }
+    .iradio_flat-red.checked.disabled {
+        background-position: -154px 0;
+    }
+
+/* Retina support */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+       only screen and (-moz-min-device-pixel-ratio: 1.5),
+       only screen and (-o-min-device-pixel-ratio: 3/2),
+       only screen and (min-device-pixel-ratio: 1.5) {
+    .icheckbox_flat-red,
+    .iradio_flat-red {
+        background-image: image-url("red@2x.png");
+        -webkit-background-size: 176px 22px;
+        background-size: 176px 22px;
+    }
+}
+
 body {
   background-color: #f8f8f8;
   color: #333;
@@ -37,7 +91,9 @@ div {
 }
 
 #notice {
-  color: green;
+  font-family: 'Arimo', sans-serif;
+  font-size:16px;
+  color: #afd139;
 }
 
 .field_with_errors {
@@ -141,7 +197,7 @@ background-image:image-url("navbar.png");
 #loginmenu a,#loginmenu a:visited,#loginmenu a:hover{color:white;background-color:none;}
 
 .footer{text-align:center; color:#575757; margin-top:50px; clear:both;}
-.container{width:1060px;margin:60px auto; min-height:300px; }
+.container{width:1024px;margin:60px auto; min-height:300px; }
 h1{font-size:56px; color:#575757;}
 h2{color:#888}
 .center-text{text-align:center;}
@@ -187,5 +243,26 @@ color:white;
 .boxed500{width:550px; margin:100px auto;}
 .boxmodel{border-radius:5px; box-shadow:0px 2px 5px rgba(0,0,0,0.2); padding:10px; width:220px; height:200px;}
 .poll_icon{
-background-image:image-url("levels.png"); background-repeat:no-repeat; line-height:65px; font-weight:bold;font-size:50px;text-indent:45px; font-family: 'Arimo', sans-serif; background-position:left 18px; color:#575757;}
-.indent_little{text-indent:55px; font-family:'Arimo', sans-serif; font-size:18px; color:#797979;}
+background-image:image-url("levels.png"); background-repeat:no-repeat; line-height:65px; font-weight:bold;font-size:50px;padding-left:45px; font-family: 'Arimo', sans-serif; background-position:left 19px; color:#575757; margin-bottom:20px;}
+.indent_little{text-indent:45px; font-family:'Arimo', sans-serif; font-size:18px; color:#797979;}
+.progbar_value{position:relative;width:40px; background-color:#d37575; border-left:1px solid #a85656;border-right:1px solid #a85656;border-bottom:1px solid #d87e7e; box-shadow:0px 4px 0px #a85656; height:25px; border-top:1px solid #c07070; line-height:25px; font-weight:bold; font-family:'Arimo', sans-serif; text-align:center; font-size:14px; color:white;}
+.custom_radio{font-family:'Arimo', sans-serif; font-size:25px; text-indent:5px;color: #575757;
+margin-top: -17px;
+margin-left: 25px;
+}
+.formtastic .choices-group{padding:0px 0px 0px 55px!important;
+width:90% !important; }
+.formtastic .choices .label{margin-bottom:10px;}
+.formtastic .choice label input, .formtastic .boolean label input {float:left !important;}
+.formtastic .choices{margin-top:10px;}
+.formtastic .choice{margin-bottom:20px !important;}
+.fr{float:left; margin-left:10px;line-height:25px; font-family:'Arimo', sans-serif; font-size:11px;}
+.bar_holder{width:900px; height:30px; margin-left:28px;}
+.bar_inner{width:800px; height:30px; float:left;}
+.submit_vote{color:white; font-family:'Arimo', sans-serif!important; font-size:18px!important; text-shadow:0px 1px 2px rgba(0,0,0,0.65);background-image:image-url("submit_bg.png"); width:156px; height:43px; margin:0 auto !important; border:none; background-color:transparent;}
+.submit_vote:hover{cursor:pointer; opacity:0.8;}
+.formtastic .actions{padding:0px !important; margin:0 auto; width:156px; }
+.formtastic .inputs {margin: 30px auto 50px auto !important;}
+.already-cast{ width:200px; margin:50px auto 50px auto; background-color:#52ba9a; height:20px; line-height:20px; color:white; text-shadow:0px 1px 3px #555; border-radius:5px; }
+.ordinal{color:#929292; font-size:14px; font-family:'Arimo', sans-serif;}
+
