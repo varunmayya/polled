@@ -1,4 +1,4 @@
-<%= form_for(@epoll) do |f| %>
+<%= nested_form_for(@epoll) do |f| %>
   <% if @epoll.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@epoll.errors.count, "error") %> prohibited this poll from being saved:</h2>
@@ -31,35 +31,54 @@
      f.number_field :user_id
   </div> -->
 
+
   <h2>Options</h2>
-  <div class="items">
-    <%= f.nested_fields_for :options do |f1| %>
-      <fieldset class="item">
-        <%= f1.label :name %>
-        <%= f1.text_field :name %>
 
-        <a href="#" class="remove"  data-confirm="Are you sure?" >remove</a>
-
-        <%= f1.hidden_field :id %>
-        <%= f1.hidden_field :_destroy %>
-      </fieldset>
-    <% end %>
-  </div>
-  <a href="#" class="add">+ Option</a>
+<%= f.fields_for :options do |op| %>
+  <%= op.text_field :name %>
+  <%= op.link_to_remove "Remove" %>
+<% end %>
+<p><%= f.link_to_add "Add a task", :options %></p>
  
 
 
   <div class="actions">
     <%= f.submit %>
+<div class="min-text"></div>
   </div>
 
 <% end %>
 
 <script>
-$(document).ready(function(e) {
-	
-		  
-	
-  $('form').nestedFields({
+$(document).ready(function() {
+$('form').on('nested:fieldRemoved', function(event) {
+  	var numOfVisibleRows = $('.fields').filter(function() {
+	  return $(this).css('display') !== 'none';
+	}).length;
+	if (numOfVisibleRows < 2 )
+	{
+		 $('.min-text').text("Must have atleast 2 options to save this poll");
+		 $('.actions input').attr("disabled", true);
+	}
+	else
+	{
+		 $('.actions input').attr("disabled", false);
+	}
+})
+
+$('form').on('nested:fieldAdded', function(event) {
+  	var numOfVisibleRows = $('.fields').filter(function() {
+	  return $(this).css('display') !== 'none';
+	}).length;
+	if (numOfVisibleRows < 2 )
+	{
+		 $('.min-text').text("Must have atleast 2 options to save this poll");
+		 $('.actions input').attr("disabled", true);
+	}
+	else
+	{
+		 $('.actions input').attr("disabled", false);
+	}
+})
 });
-});</script>
+</script>

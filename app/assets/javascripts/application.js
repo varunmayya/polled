@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.nested-fields
+//= require jquery_nested_form
 //= require 'jquery.icheck'
 //= require_tree .
 
