@@ -12,6 +12,13 @@ class ApplicationController < ActionController::Base
     end
   end
   
+  def find_user_from_epoll(epoll)
+    if User.find(epoll.user_id).authentications.exists?
+    User.find(epoll.user_id).authentications.first.user_name 
+  else
+    "NullUser"
+  end
+  end
   
   def vote_has_been_cast?
     if current_user
@@ -51,4 +58,5 @@ end
   helper_method :count_poll
   helper_method :vote_has_been_cast?
   helper_method :whichvote
+  helper_method :find_user_from_epoll
 end

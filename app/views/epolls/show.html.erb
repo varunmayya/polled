@@ -39,6 +39,6 @@ You've already cast your vote </div>
 
 
 
-
-<%if current_user.id == @epoll.user_id%> <%= link_to 'Edit', edit_epoll_path(@epoll) %> | <%= link_to 'Statistics', statistics_path(@epoll) %><%end%> |
+<%if user_signed_in?%>
+<%if current_user.id == @epoll.user_id %> <%= link_to 'Edit', edit_epoll_path(@epoll) %> | <%= link_to 'Statistics', statistics_path(@epoll) %><%end%> |<%end%>
 <%= link_to 'Back to all polls', epolls_path %></p></div>

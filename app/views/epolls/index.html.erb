@@ -1,29 +1,4 @@
-<h1>Listing epolls</h1>
+<div class="center-text"><h1>Polled Timeline</h1></div>
 
-<table>
-  <tr>
-    <th>Question</th>
-    <th>Timeout</th>
-    <th>Status</th>
-    <th>User</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
-<% @epolls.each do |epoll| %>
-  <tr>
-    <td><%= epoll.question %></td>
-    <td><%= epoll.timeout %></td>
-    <td><%= epoll.status %></td>
-    <td><%= epoll.user_id %></td>
-    <td><%= link_to 'Show', epoll %></td>
-    <td><%= link_to 'Edit', edit_epoll_path(epoll) %></td>
-    <td><%= link_to 'Destroy', epoll, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Poll', new_epoll_path %>
+<%= render 'listpolls' %>

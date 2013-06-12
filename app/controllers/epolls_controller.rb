@@ -3,7 +3,7 @@ class EpollsController < ApplicationController
   # GET /epolls.json
   before_filter :authenticate_user!, :except => [:show, :index]
   def index
-    @epolls = Epoll.all
+    @epolls = Epoll.order("created_at DESC")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -12,7 +12,7 @@ class EpollsController < ApplicationController
   end
   
   def mypolls
-    @epolls = current_user.epolls
+    @epolls = current_user.epolls.order("created_at DESC")
      respond_to do |format|
         format.html # mypolls.html.erb
         format.json { render json: @epolls }

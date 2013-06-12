@@ -1,0 +1,25 @@
+
+<% @epolls.each do |epoll| %>
+ 
+	<div class="empoll">
+		<div class="question_side">
+    <div class="greenheader"><%=link_to epoll.question, epoll_path(epoll) %> <br/></div>
+	<span class="lightgrey">Created by @<%= find_user_from_epoll(epoll) %> on <%= epoll.created_at.to_date.to_formatted_s(:long_ordinal) %> <br/><br/>
+		<div class="polls_image"> <%=pluralize(epoll.options.flat_map(&:votes).count, 'vote')%> cast.</div>
+		</td></span>
+    </div>
+<div class="edit_side">
+<%if user_signed_in? && current_user.id == epoll.user_id%>
+    <td><%= link_to 'Edit', edit_epoll_path(epoll), :class=> "icon_edit" %></td>
+    <td><%= link_to 'Destroy', epoll, method: :delete, data: { confirm: 'Are you sure?' } , :class=> "icon_destroy"%></td>
+<%end%>
+</div>
+</div>
+
+<% end %>
+
+
+
+<br />
+
+
