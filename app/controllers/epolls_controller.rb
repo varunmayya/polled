@@ -19,6 +19,14 @@ class EpollsController < ApplicationController
     end
   end
   
+  def trending
+    @epolls = current_user.epolls.order("created_at DESC")
+     respond_to do |format|
+        format.html # mypolls.html.erb
+        format.json { render json: @epolls }
+    end
+  end
+  
   def statistics
     if Epoll.find(params[:id]).user_id.to_i == current_user.id
     @epoll = Epoll.find(params[:id])

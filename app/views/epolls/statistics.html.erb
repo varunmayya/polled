@@ -4,7 +4,7 @@
 	Total options:
 	<%=@epoll.options.count%> <br/>
 	Total votes cast:
-	<%=@epoll.options.flat_map(&:votes).count%>
+	<%=@epoll.options.sum(:votes_count)%>
 	<br/>
 	Top country:
 	<%=@epoll.options.flat_map(&:votes).flat_map(&:location).max%>
