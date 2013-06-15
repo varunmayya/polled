@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130614102941) do
+ActiveRecord::Schema.define(:version => 20130615133028) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -29,7 +29,10 @@ ActiveRecord::Schema.define(:version => 20130614102941) do
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "slug"
   end
+
+  add_index "epolls", ["slug"], :name => "index_epolls_on_slug"
 
   create_table "options", :force => true do |t|
     t.string   "name"

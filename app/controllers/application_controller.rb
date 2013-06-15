@@ -1,5 +1,16 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  after_filter :store_location
+  
+  def store_location
+    # store last url as long as it isn't a /users path
+    session[:previous_url] = request.fullpath unless request.fullpath =~ /\/login/
+  end
+
+  def after_sign_in_path_for(resource)
+    session[:previous_url] || root_path
+  end
+  
   
   current_user||= User.new #i changed this
   
@@ -53,7 +64,14 @@ end
      def show_vote_parts(a)
         return (a.votes.count/@epoll.options.flat_map(&:votes).count.to_f) *100
     end
+    
 
+    
+    
+
+
+    
+    
   helper_method :show_vote_parts
   helper_method :count_poll
   helper_method :vote_has_been_cast?

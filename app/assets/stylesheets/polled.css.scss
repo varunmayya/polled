@@ -277,3 +277,8 @@ a.icon_edit:hover, a.icon_destroy:hover{opacity:0.7; filter:alpha(opacity=70); }
 .lightgrey{color:#777; font-family:'Arimo', sans-serif; }
 h1,h2,h3{font-family:'Arimo', sans-serif; }
 .center-div{margin:0 auto;}
+.next_page{display:inline-block;text-indent:-9999px; width:64px; height:17px; background-image:image-url("right_arrow.png"); margin-left:10px;}
+.previous_page{display:inline-block;text-indent:-9999px; width:64px; height:17px; background-image:image-url("left_arrow.png"); margin-right:10px;}
+.pagination a{font-size:16px;}
+.next_page:hover, .previous_page:hover{opacity:0.6; filter:alpha(opacity=60);}
+.pagination {font-size:16px;}

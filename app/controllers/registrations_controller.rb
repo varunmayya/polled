@@ -1,7 +1,9 @@
 class RegistrationsController < Devise::RegistrationsController
   def create
     super
+    UserMailer.registration_confirmation(@user).deliver
     session[:omniauth] = nil unless @user.new_record?
+    
   end
   
 

@@ -37,6 +37,7 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 
+gem 'will_paginate', '~> 3.0'
 gem 'devise'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
@@ -48,3 +49,5 @@ gem 'formtastic'
 gem 'geocoder'
 gem 'browser'
 gem 'icheck-rails'
+gem "auto_strip_attributes", "~> 1.0"
+gem "friendly_id"

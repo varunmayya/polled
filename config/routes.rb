@@ -14,6 +14,7 @@ Poll::Application.routes.draw do
   match 'statistics/:id' => 'epolls#statistics', :as => 'statistics'
 match 'users/auth/:provider/callback' => 'authentications#create'
 match '/auth/:provider/callback' => 'authentications#create'
+match 'trending' => 'epolls#trending'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

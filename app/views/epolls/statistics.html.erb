@@ -22,7 +22,7 @@ Top Browser:
 
 <%@epoll.options.each do |option|%>
 <h3>Option Name: <%=option.name%></h3>
-Votes Cast: <%=@temp_cnt = option.votes.count%> <br/>
+Votes Cast: <%=@temp_cnt = option.votes_count%> <br/>
 Top Country: <%=option.votes.flat_map(&:location).max || "Not enough votes on this option to determine this."%><br/>
 Top City: <%=option.votes.flat_map(&:city).max || "Not enough votes on this option to determine this."%><br/>
 Top Platform: <%=(option.votes.flat_map(&:os).max || "Not enough votes on this option to determine this.").capitalize%><br/>

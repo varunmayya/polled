@@ -10,18 +10,23 @@
 <body>
 
 <div id ="navbar">
-<%if user_signed_in?%>
+
 <div id ="settingsmenu"><div id="drop_icon"></div><br/>
 	<div class="openmenu">
 	<ul>
+		<%if user_signed_in?%>
 		<li><%= link_to "New Poll", new_epoll_path%></li>
 	<li><%= link_to "My Polls", mypolls_path%></li>
+	<%end%>
+	
 	<li><%= link_to "All Polls", epolls_path%></li>
 	<li><%= link_to "Trending Polls", mypolls_path%></li>
+	<%if user_signed_in?%>
 	<li><%= link_to "Settings", edit_user_registration_path%></li>
+	<%end%>
 	</ul></div>
 	</div>
-<%end%>
+
 <%if user_signed_in?%>
 <div id ="loginmenu">You are logged in as <%=current_user.email%>. <%= link_to "Logout?", destroy_user_session_path, method: :delete%></div>
 <%else%>
