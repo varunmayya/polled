@@ -8,7 +8,7 @@ $(document).ready(function (){
 		            return false;
 		      }	
 	
-	      $('#drop_icon').mouseover(afunction);
-           $('#settingsmenu').mouseleave(bfunction);
+	      $('#drop_icon').click(afunction);
+
 
 });
