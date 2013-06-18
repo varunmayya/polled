@@ -51,3 +51,4 @@ gem 'browser'
 gem 'icheck-rails'
 gem "auto_strip_attributes", "~> 1.0"
 gem "friendly_id"
+gem "bullet", :group => "development"

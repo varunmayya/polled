@@ -3,7 +3,7 @@ class EpollsController < ApplicationController
   # GET /epolls.json
   before_filter :authenticate_user!, :except => [:show, :index, :trending]
   def index
-    @epolls = Epoll.paginate(:page => params[:page], :per_page => 6).order("created_at DESC")
+    @epolls = Epoll.paginate(:include => [:options , { :options => :votes }], :page => params[:page], :per_page => 6).order("created_at DESC")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -12,7 +12,7 @@ class EpollsController < ApplicationController
   end
   
   def mypolls
-    @epolls = current_user.epolls.paginate(:page => params[:page], :per_page => 6).order("created_at DESC")
+    @epolls = current_user.epolls.paginate(:include => [:options , { :options => :votes }], :page => params[:page], :per_page => 6).order("created_at DESC")
      respond_to do |format|
         format.html # mypolls.html.erb
         format.json { render json: @epolls }
@@ -20,7 +20,7 @@ class EpollsController < ApplicationController
   end
   
   def trending
-    @epolls = Epoll.joins(:options).group("epolls.id").paginate(:page => params[:page], :per_page => 6).order("sum(votes_count) DESC")
+    @epolls = Epoll.joins(:options).group("epolls.id,options.id").paginate(:include => [:options], :page => params[:page], :per_page => 6 , :total_entries => 18).order("sum(votes_count) DESC")
      respond_to do |format|
         format.html # mypolls.html.erb
         format.json { render json: @epolls }
@@ -28,7 +28,7 @@ class EpollsController < ApplicationController
   end
   
   def statistics
-    if Epoll.find(params[:id]).user_id.to_i == current_user.id
+    if Epoll.find(params[:id], :include => { :options => :votes }).user_id.to_i == current_user.id
     @epoll = Epoll.find(params[:id])
     @whichuser = User.find(@epoll.user_id).authentications.first.user_name if User.find(@epoll.user_id).authentications.exists?
   else
@@ -41,7 +41,7 @@ class EpollsController < ApplicationController
   # GET /epolls/1
   # GET /epolls/1.json
   def show
-    @epoll = Epoll.find(params[:id])
+    @epoll = Epoll.find(params[:id], :include => { :options => :votes })
     @whichuser = User.find(@epoll.user_id).authentications.first.user_name if User.find(@epoll.user_id).authentications.exists?
     @vote = Vote.new
     @vote.option_id = whichvote 
