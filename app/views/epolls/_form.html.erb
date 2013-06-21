@@ -64,6 +64,7 @@ $('form').on('nested:fieldRemoved', function(event) {
 	{
 		 $('.min-text').text("Note: You must have atleast 2 options to save this poll.");
 		 $('.actions input').attr("disabled", true);
+		$('.sub_button').css("display", "none")
 	}
 	else
 	{
@@ -80,12 +81,14 @@ $('form').on('nested:fieldAdded', function(event) {
 	{
 		 $('.min-text').text("Note: You must have atleast 2 options to save this poll.");
 		 $('.actions input').attr("disabled", true);
+		$('.sub_button').css("display", "none")
 	}
 	else
 	{
 		
 		 $('.actions input').attr("disabled", false);
 		$('.min-text').text("");
+		$('.sub_button').css("display", "block")
 	}
 })
 });
