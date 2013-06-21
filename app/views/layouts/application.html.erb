@@ -9,7 +9,9 @@
 <link href='http://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
 </head>
 <body>
-<%= render 'analytics' if Rails.env.production? %>
+<%if Rails.env.production? %>
+<%= render :partial => 'layouts/analytics' %>
+<%end%>
 <div id ="navbar">
 
 <div id ="settingsmenu"><div id="drop_icon"></div><br/>
