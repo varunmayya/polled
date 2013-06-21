@@ -2,7 +2,7 @@
 
 <% @epolls.each do |epoll| %>
  
-	<div class="empoll">
+	<div class="empoll-new">
 		<div class="question_side">
     <div class="greenheader"><%=link_to epoll.question, epoll_path(epoll) %> <br/></div>
 	<span class="lightgrey">Created by @<%= find_user_from_epoll(epoll) %> on <%= epoll.created_at.to_date.to_formatted_s(:long_ordinal) %> <br/><br/>
