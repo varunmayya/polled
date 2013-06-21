@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery_nested_form
+//= require jquery-ui.min
 //= require 'jquery.icheck'
 //= require_tree .
 

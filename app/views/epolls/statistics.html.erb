@@ -1,5 +1,6 @@
 <div class="center-text"><h2> Statistics for Poll: "<%=@epoll.question %>"</h2></div>
-<p>
+<div class="empoll-new">
+<p class="graytext">
 	<br/>
 	Total options:
 	<%=@epoll.options.count%> <br/>
@@ -17,19 +18,20 @@ Top Platform:
 <br/>
 
 Top Browser: 
-<%=@epoll.options.flat_map(&:votes).flat_map(&:browser).max%>
+<%=@epoll.options.flat_map(&:votes).flat_map(&:browser).max%></p>
 <h2> Option breakdown </h2>
 
 <%@epoll.options.each do |option|%>
-<h3>Option Name: <%=option.name%></h3>
+<strong>Option Name: <%=option.name%></strong>
+<p class="graytext">
 Votes Cast: <%=@temp_cnt = option.votes_count%> <br/>
 Top Country: <%=option.votes.flat_map(&:location).max || "Not enough votes on this option to determine this."%><br/>
 Top City: <%=option.votes.flat_map(&:city).max || "Not enough votes on this option to determine this."%><br/>
 Top Platform: <%=(option.votes.flat_map(&:os).max || "Not enough votes on this option to determine this.").capitalize%><br/>
 Top Browser: <%=option.votes.flat_map(&:browser).max || "Not enough votes on this option to determine this."%><br/>
 <%@count =0 %>
-Percentage mobile users: <%option.votes.flat_map(&:is_mobile).each {|n| @count+= 1 if n}|| "Not enough votes on this option to determine this."%><%= @temp_cnt==0?"No Statistics":"#{(@count/@temp_cnt)*100}%"  %><br/>
+Percentage mobile users: <%option.votes.flat_map(&:is_mobile).each {|n| @count+= 1 if n}|| "Not enough votes on this option to determine this."%><%= @temp_cnt==0?"No Statistics":"#{(@count/@temp_cnt)*100}%"  %><br/></p>
 <%end%>
-
+</div>
 
 

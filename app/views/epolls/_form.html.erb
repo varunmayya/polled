@@ -1,3 +1,7 @@
+
+<%= javascript_include_tag 'https://raw.github.com/trentrichardson/jQuery-Timepicker-Addon/master/jquery-ui-timepicker-addon.js' %>
+<%= stylesheet_link_tag "http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css", "application" %>
+
 <%= nested_form_for(@epoll) do |f| %>
   <% if @epoll.errors.any? %>
     <div id="error_explanation">
@@ -11,58 +15,60 @@
     </div>
   <% end %>
 
-<%= notice %>
-<%= alert%>
-<h2>Poll Settings</h2>
+
+<div class="notice"><%= notice %></div>
+<div class="alert"><%= alert%></div>
+
+<div class="empoll-new">
+	<br/>
   <div class="field">
-    <%= f.label :question %><br />
-    <%= f.text_field :question %>
+	
+    <div class="center-text"><h2>Question<br /></h2></div>
+    <div class="long-text"><%= f.text_field :question %></div>
   </div>
   <div class="field">
-    <%= f.label :timeout %><br />
-    <%= f.datetime_select :timeout %>
+    <div class="center-text"><h2>When should this Poll end?<br /></h2></div>
+    <div class="center-div span10"><%= f.text_field :timeout , :id =>'d_picker' %></div>
   </div>
-  <!--<div class="field">
-    f.label :status <br />
-    f.text_field :status 
-  </div> -->
-  <!--<div class="field">
-     f.label :user_id <br />
-     f.number_field :user_id
-  </div> -->
-
-
-  <h2>Options</h2>
-
+</div>
+<div class="empoll-new">
+ <div class="center-text"><h2>Options for this Poll</h2></div>
+<div class="center-div span20"><div class="center-text">
 <%= f.fields_for :options do |op| %>
   <%= op.text_field :name %>
-  <%= op.link_to_remove "Remove" %>
+  <%= op.link_to_remove "&#10006; Remove".html_safe, :class => "remove_option" %>
 <% end %>
-<p><%= f.link_to_add "Add an option", :options %></p>
- 
 
 
+<p><%= f.link_to_add "&#10010; &nbsp; Add option".html_safe, :options, :class => "add_option" %></p>
+</div>
+</div></div>
+<%= f.submit 'Create Poll', :class => 'sub_button' %>
   <div class="actions">
-    <%= f.submit %>
-<div class="min-text"></div>
-  </div>
+    
+<div class="min-text notice center-text"></div>
+  
 
 <% end %>
 
 <script>
 $(document).ready(function() {
+	
+	 $('#d_picker').datetimepicker({dateFormat: 'yy-mm-dd'});
+	
 $('form').on('nested:fieldRemoved', function(event) {
   	var numOfVisibleRows = $('.fields').filter(function() {
 	  return $(this).css('display') !== 'none';
 	}).length;
 	if (numOfVisibleRows < 2 )
 	{
-		 $('.min-text').text("Must have atleast 2 options to save this poll");
+		 $('.min-text').text("Note: You must have atleast 2 options to save this poll.");
 		 $('.actions input').attr("disabled", true);
 	}
 	else
 	{
 		 $('.actions input').attr("disabled", false);
+		$('.min-text').text("");
 	}
 })
 
@@ -72,12 +78,14 @@ $('form').on('nested:fieldAdded', function(event) {
 	}).length;
 	if (numOfVisibleRows < 2 )
 	{
-		 $('.min-text').text("Must have atleast 2 options to save this poll");
+		 $('.min-text').text("Note: You must have atleast 2 options to save this poll.");
 		 $('.actions input').attr("disabled", true);
 	}
 	else
 	{
+		
 		 $('.actions input').attr("disabled", false);
+		$('.min-text').text("");
 	}
 })
 });

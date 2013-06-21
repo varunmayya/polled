@@ -4,18 +4,20 @@
   <title>Polled - Your one stop polling destination!</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+
   <%= csrf_meta_tags %>
 <link href='http://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
 </head>
 <body>
-
+<%= render 'analytics' if Rails.env.production? %>
 <div id ="navbar">
 
 <div id ="settingsmenu"><div id="drop_icon"></div><br/>
 	<div class="openmenu">
 	<ul>
+		<li><%= link_to "Create Poll", new_epoll_path%></li>
 		<%if user_signed_in?%>
-		<li><%= link_to "New Poll", new_epoll_path%></li>
+		
 	<li><%= link_to "My Polls", mypolls_path%></li>
 	<%end%>
 	
@@ -23,6 +25,7 @@
 	<li><%= link_to "Trending Polls", trending_path%></li>
 	<%if user_signed_in?%>
 	<li><%= link_to "Settings", edit_user_registration_path%></li>
+	<li><%= link_to "The Big Idea", idea_path , :class=> 'nccolor'%></li>
 	<%end%>
 	</ul></div>
 	</div>
@@ -39,7 +42,9 @@
 
 </div>
 <div class="footer">
-	&copy;Polled 2013. <br/><br/></div>
+	&copy;Polled 2013 |
+	<span class="smallesttext"><%=link_to "Privacy Policy", policy_path%></span><br/>
+	<br/></div>
 
 </body>
 </html>

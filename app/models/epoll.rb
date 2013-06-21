@@ -10,7 +10,6 @@ class Epoll < ActiveRecord::Base
   validates_uniqueness_of :question
   validates_associated :options
   validates_presence_of :options
-  validates_presence_of :options
   before_validation :require_two_options
 
     private

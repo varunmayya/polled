@@ -20,7 +20,7 @@
 
 <%unless vote_has_been_cast?%>
  <%= f.actions do %>
-      <%= f.action :submit, :button_html => { :class => "submit_vote" } , :label => "Submit Vote"%>
+      <%= f.action :submit, :button_html => { :class => "sub_button" } , :label => "Submit Vote"%>
     <% end %>
 <%else%>
 <div class="center-text already-cast">
