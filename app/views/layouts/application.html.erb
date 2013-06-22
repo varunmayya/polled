@@ -4,7 +4,11 @@
   <title>Polled - Your one stop polling destination!</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
-
+<meta property="og:image" content="http://i42.tinypic.com/2wf74tx.png" />
+<%if @epoll%>
+<meta name="description" content="Asked by: <%="#{find_user_from_epoll(@epoll)}"%>. Polled is the ultimate FREE polling solution for the Twitterverse and beyond, packed with statistics, data and reports! ">
+<meta name="Title" content="Poll: <%="#{@epoll.question}"%>">
+<%end%>
   <%= csrf_meta_tags %>
 <link href='http://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
 </head>
