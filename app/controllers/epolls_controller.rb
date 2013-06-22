@@ -20,7 +20,7 @@ class EpollsController < ApplicationController
   end
   
   def trending
-    @epolls = Epoll.joins(:options).group("epolls.id,options.id").paginate(:include => [:options], :page => params[:page], :per_page => 6 , :total_entries => 18).order("sum(votes_count) DESC")
+    @epolls = Epoll.joins(:options).group("epolls.id").paginate(:page => params[:page], :per_page => 6 , :total_entries => 18).order("sum(votes_count) DESC")
      respond_to do |format|
         format.html # mypolls.html.erb
         format.json { render json: @epolls }
