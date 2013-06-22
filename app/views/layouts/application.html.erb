@@ -6,7 +6,9 @@
   <%= javascript_include_tag "application" %>
 <meta property="og:image" content="http://i42.tinypic.com/2wf74tx.png" />
 <%if @epoll%>
+<%if @epoll.user%>
 <meta name="description" content="Asked by: <%="#{find_user_from_epoll(@epoll)}"%>. Polled is the ultimate FREE polling solution for the Twitterverse and beyond, packed with statistics, data and reports! ">
+<%end%>
 <meta name="Title" content="Poll: <%="#{@epoll.question}"%>">
 <%end%>
   <%= csrf_meta_tags %>
