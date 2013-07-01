@@ -53,7 +53,7 @@
 }
 
 body {
-  background-color: #f8f8f8;
+  background-color: #f5f2f2;
   color: #333;
   font-family: helvetica,arial, sans-serif;
   font-size: 12px;
@@ -195,7 +195,7 @@ color:#444;
 #navbar{width:100%;
 height:42px;
 background-color: black;
-margin-top:10px;
+margin-top:5px;
 }
 
 #settingsmenu{float:left; }
@@ -208,13 +208,13 @@ margin-top:10px;
 
 .footer{text-align:center; color:#888; margin-top:50px; clear:both; font-family:'Arimo', sans-serif; }
 .container{width:1024px;margin:60px auto; min-height:300px; }
-h1{font-size:56px; color:#575757;}
-h2{color:#888}
+h1{font-size:80px; color:black;}
+h2{color:#2d2f31}
 .center-text{text-align:center;}
-.nbcolor{color:#50b295; text-decoration:none; }
-.nccolor{color:#50b295 !important; text-decoration:none; }
+.nbcolor{color:#fbca05; text-decoration:none; font-weight: bold;}
+.nccolor{color:#fbca05 !important; text-decoration:none; font-weight: bold;}
 .linklist a
-{text-decoration:none;color:#50b295; font-size:16px; font-family: 'Arimo', sans-serif; line-height:20px; }
+{text-decoration:none;color:#black; font-size:16px; font-family: 'Arimo', sans-serif; line-height:20px; }
 .openmenu
 {
 display: none;
