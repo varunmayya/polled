@@ -194,16 +194,17 @@ color:#444;
 
 #navbar{width:100%;
 height:42px;
-background-color: black;
+background-color: #161719;
 }
 
 #settingsmenu{float:left; }
 #drop_icon{margin-left:10px;   background-image:image-url("pmenu.png"); font-size:15px; color:white; height:42px;  background-repeat: no-repeat; width:50px; margin-left:70px;}
 #drop_icon:hover{background-image:image-url("pmenuhover.png"); height:42px;  background-repeat: no-repeat; width:50px; margin-left:70px;}
-#loginmenu{float:right; margin-right:30px; font-size:13px; color:white; height:26px; margin-top:10px;}
+#loginmenu{float:right; margin-right:30px; font-size:13px; color:white; height:26px; margin-top:10px; text-decoration:none !important;}
 
 #logo{position:absolute; margin-left:-51px;left:50%; background-image:image-url("plogo.png"); height:42px; width:108px;}
-#loginmenu a,#loginmenu a:visited,#loginmenu a:hover{color:#fbca05;background-color:none;}
+#loginmenu a,#loginmenu a:visited{color:white;background-color:none;}
+#loginmenu a:hover{color:#fbca05;background-color:none;}
 
 .footer{text-align:center; color:#888; margin-top:50px; clear:both; font-family:'Signika', sans-serif; }
 .container{width:1024px;margin:60px auto; min-height:300px; }
@@ -220,12 +221,14 @@ display: none;
 padding-top: 1px;
 padding-bottom: 1.7px;
 list-style-type: none;
-background-color: black;
-width: 140px;
+background-color: #161719;
+width: 150px;
 margin-top: -15px;
 margin-left: 25px;
 box-shadow: 0px 5px 0px #fbca05;
-font-family: 'Signika', sans-serif !important; font-weight:600 !important;
+font-family: 'Signika', sans-serif !important;
+font-weight: 700 !important;
+font-size: 12px !important;
 }
 .center-div{margin:0 auto;}
 .openmenu ul li
@@ -342,5 +345,17 @@ border-top:1px solid #428f78; border-right:1px solid #428f78; border-left:1px so
 .span500 input[type=email], .span500 input[type=password]{outline:none; border:1px solid #bcbcbc; width:390px; height:20px; font-size:14px; color:#999; padding:5px; margin:0 auto;}
 .span500 input[type=email]:focus, .span500 input[type=password]:focus{border:1px solid limegreen; box-shadow: inset 0 1px 2px rgba(0,0,0,0.1),0 0 5px rgba(81,167,232,0.5);}
 .span500ip{width:400px; margin:0 auto;}
-.graytext{color:#666;}
+
+.graytext{color: #2d2f31;
+height: 40px;
+width: 320px;
+position: absolute;
+margin-left: -151px;
+left: 50%;
+background-color: #fbca05;
+font-size: 20px !important;
+font-family: 'Signika', sans-serif;
+font-weight: 600;
+line-height: 42px;}
+
 .smallesttext a{ color:#999; }
