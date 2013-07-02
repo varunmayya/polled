@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Polled - Your one stop polling destination!</title>
+  <title>Pollled - Your one stop polling destination!</title>
   <link href='http://fonts.googleapis.com/css?family=Signika:700,600,400,300' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
 <meta property="og:image" content="http://i42.tinypic.com/2wf74tx.png" />
 <%if @epoll%>
 <%if @epoll.user%>
-<meta name="description" content="Asked by: <%="#{find_user_from_epoll(@epoll)}"%>. Polled is the ultimate FREE polling solution for the Twitterverse and beyond, packed with statistics, data and reports! ">
+<meta name="description" content="Asked by: <%="#{find_user_from_epoll(@epoll)}"%>. Pollled is the ultimate FREE polling solution for the Twitterverse and beyond, packed with statistics, data and reports! ">
 <%end%>
 <meta name="Title" content="Poll: <%="#{@epoll.question}"%>">
 <%end%>
@@ -40,18 +40,18 @@
 	</div>
 
 <%if user_signed_in?%>
-<div id ="loginmenu">You are logged in as <%=current_user.email%>.     <%= link_to "LOGOUT?", destroy_user_session_path, method: :delete%></div>
+<div id ="loginmenu">You are logged in as <%=current_user.email%>.&nbsp;&nbsp;<%= link_to "LOGOUT?", destroy_user_session_path, method: :delete%></div>
 <%else%>
-<div id="loginmenu"><%=link_to "LOGIN", new_user_session_path%>     <%=link_to "REGISTER", new_user_registration_path%></div>
+<div id="loginmenu"><%=link_to "LOGIN", new_user_session_path%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%=link_to "REGISTER", new_user_registration_path%></div>
 <%end%>
-<a href="http://polled.us.to"><div id="logo"></div></a>
+<a href="http://pollled.com"><div id="logo"></div></a>
 </div>
 <div class ="container">
 <%= yield %>
 
 </div>
 <div class="footer">
-	&copy;Polled 2013 |
+	&copy;Pollled 2013 |
 	<span class="smallesttext"><%=link_to "Privacy Policy", policy_path%></span><br/>
 	<br/></div>
 
