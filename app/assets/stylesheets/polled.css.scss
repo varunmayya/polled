@@ -206,7 +206,7 @@ margin-right: 70px;
 font-size: 13px;
 color: white;
 height: 26px;
-margin-top: 10px;
+margin-top: 12px;
 text-decoration: none !important;
 font-family: 'Signika', sans-serif;
 font-weight: 700;}
@@ -219,6 +219,11 @@ font-weight: 700;}
 .container{width:1024px;margin:60px auto; min-height:300px; }
 h1{font-family: 'Signika', sans-serif; font-weight:700; font-size:70px; color:#282828;}
 h2{font-family: 'Signika', sans-serif; font-weight:400; font-size:20px; color:#373636}
+
+h4{font-weight: 400;
+font-size: 50px;
+color: #282828;}
+
 .center-text{text-align:center;}
 .nbcolor{font-family: 'Signika', sans-serif;
 font-weight: 700;
@@ -228,8 +233,18 @@ padding-left: 3px;
 padding-right: 3px;
 text-decoration: none;}
 .nccolor{font-family: 'Signika', sans-serif; font-weight:700; color:#fbca05 !important; text-decoration:none;}
+
 .linklist a
-{text-decoration:none;color:black; font-size:16px; font-family: 'Signika', sans-serif; font-weight:600; line-height:20px; }
+{text-decoration: none;
+color: #373636;
+font-size: 16px;
+font-family: 'Signika', sans-serif;
+font-weight: 400;
+line-height: 20px;
+padding: 1px 4px 1px 4px;}
+
+.linklist a:hover {background-color: #fbca05;}
+
 .openmenu
 {
 display: none;
@@ -304,7 +319,7 @@ a.icon_edit:hover, a.icon_destroy:hover{opacity:0.7; filter:alpha(opacity=70); }
 .edit_side{float:right; margin-top:35px; width:100px;}
 .greenheader a{color:#50b295; font-size:24px; text-decoration:none; font-family:'Signika', sans-serif; line-height:30px;}
 .lightgrey{color:#777; font-family:'Signika', sans-serif; }
-h1,h2,h3{font-family: 'Signika', sans-serif; }
+h1,h2,h3,h4{font-family: 'Signika', sans-serif; }
 .center-div{margin:0 auto;}
 .next_page{display:inline-block;text-indent:-9999px; width:64px; height:17px; background-image:image-url("right_arrow.png"); margin-left:10px;}
 .previous_page{display:inline-block;text-indent:-9999px; width:64px; height:17px; background-image:image-url("left_arrow.png"); margin-right:10px;}
