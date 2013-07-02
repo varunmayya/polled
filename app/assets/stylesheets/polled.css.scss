@@ -200,18 +200,33 @@ background-color: #161719;
 #settingsmenu{float:left; }
 #drop_icon{margin-left:10px;   background-image:image-url("pmenu.png"); font-size:15px; color:white; height:42px;  background-repeat: no-repeat; width:50px; margin-left:70px;}
 #drop_icon:hover{background-image:image-url("pmenuhover.png"); height:42px;  background-repeat: no-repeat; width:50px; margin-left:70px;}
-#loginmenu{float:right; margin-right:30px; font-size:13px; color:white; height:26px; margin-top:10px; text-decoration:none !important;}
+
+#loginmenu{float: right;
+margin-right: 70px;
+font-size: 13px;
+color: white;
+height: 26px;
+margin-top: 10px;
+text-decoration: none !important;
+font-family: 'Signika', sans-serif;
+font-weight: 700;}
 
 #logo{position:absolute; margin-left:-51px;left:50%; background-image:image-url("plogo.png"); height:42px; width:108px;}
-#loginmenu a,#loginmenu a:visited{color:white;background-color:none;}
-#loginmenu a:hover{color:#fbca05;background-color:none;}
+#loginmenu a,#loginmenu a:visited{color:white;background-color:none; text-decoration: none !important;}
+#loginmenu a:hover{color:#fbca05;background-color:none; text-decoration: none !important;}
 
 .footer{text-align:center; color:#888; margin-top:50px; clear:both; font-family:'Signika', sans-serif; }
 .container{width:1024px;margin:60px auto; min-height:300px; }
 h1{font-family: 'Signika', sans-serif; font-weight:700; font-size:70px; color:#282828;}
 h2{font-family: 'Signika', sans-serif; font-weight:400; font-size:20px; color:#373636}
 .center-text{text-align:center;}
-.nbcolor{font-family: 'Signika', sans-serif; font-weight:700; color:#fbca05; text-decoration:none;}
+.nbcolor{font-family: 'Signika', sans-serif;
+font-weight: 700;
+color: #373636;
+background-color: #fbca05;
+padding-left: 3px;
+padding-right: 3px;
+text-decoration: none;}
 .nccolor{font-family: 'Signika', sans-serif; font-weight:700; color:#fbca05 !important; text-decoration:none;}
 .linklist a
 {text-decoration:none;color:black; font-size:16px; font-family: 'Signika', sans-serif; font-weight:600; line-height:20px; }
