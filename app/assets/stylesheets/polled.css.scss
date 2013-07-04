@@ -216,7 +216,7 @@ font-weight: 700;}
 #loginmenu a:hover{color:#fbca05;background-color:none; text-decoration: none !important;}
 
 .footer{margin-top:130px; margin-bottom:15px; height:33px; width:100%; clear:both; font-family:'Signika', sans-serif; }
-.footer1{float:left;height:33px; width:45%; text-align:left; margin-left:50px; font-family: 'Signika', sans-serif; font-weight:600; font-size:14px; color:#282828; text-decoration:none !important;}
+.footer1{float:left;height:33px; width:45%; text-align:left; margin-left:50px; font-family: 'Signika', sans-serif; font-weight:600; font-size:12px; color:#282828; text-decoration:none !important;}
 .footer2{float:right;height:33px; width:189px; margin-right:50px;}
 .pfb{float:left;height:33px; width:63px;background-image:image-url("pfb.png"); position:absolute;}
 .pfb:hover{background-image:image-url("pfbh.png");}
@@ -294,7 +294,10 @@ color:white;
 .float_left{float:left;}
 .float_right{float:right;}
 
-.boxed500{width:550px; margin:100px auto; margin-top:50px;}
+.boxed500{width: 550px;
+margin: 100px auto;
+margin-top: 100px;
+margin-bottom: 210px;}
 
 .boxmodel{padding: 10px;
 width: 220px;
@@ -307,7 +310,7 @@ border: 1px solid #DCDCDC;}
 background-image:image-url("levels.png"); background-repeat:no-repeat; line-height:65px; font-weight:bold;font-size:50px;padding-left:45px; font-family: 'Signika', sans-serif; background-position:left 19px; color:#575757; margin-bottom:20px;}
 .polls_image{background-image:image-url("levels.png"); text-indent:45px; line-height:30px;padding-top:8px; height:22px; background-repeat:no-repeat;width:130px;}
 .indent_little{text-indent:45px; font-family:'Signika', sans-serif; font-size:18px; color:#797979;}
-.progbar_value{position:relative;width:40px; background-color:#d37575; border-left:1px solid #a85656;border-right:1px solid #a85656;border-bottom:1px solid #d87e7e; box-shadow:0px 4px 0px #a85656; height:25px; border-top:1px solid #c07070; line-height:25px; font-weight:bold; font-family:'Signika', sans-serif; text-align:center; font-size:14px; color:white;}
+.progbar_value{position:relative;width:40px; background-color:#d37575; border-left:1px solid #fba705;border-right:1px solid #fba705;border-bottom:1px solid #fba705; height:25px; border-top:1px solid #fba705; line-height:25px; font-weight:bold; font-family:'Signika', sans-serif; text-align:center; font-size:14px; color:white;}
 .custom_radio{font-family:'Signika', sans-serif; font-size:25px; text-indent:5px;color: #575757;
 margin-top: -17px;
 margin-left: 25px;
@@ -332,10 +335,18 @@ a.icon_edit{text-indent:-9999px; background-image:image-url("edit_icon.png"); wi
 a.icon_destroy{margin-left:10px;text-indent:-9999px; background-image:image-url("destroy_icon.png"); width:31px; height:31px; display:inline-block;}
 a.icon_edit:hover, a.icon_destroy:hover{opacity:0.7; filter:alpha(opacity=70); }
 .empoll{height:100px;width:900px; border-radius:5px; background-color:white; margin:20px auto; border:1px solid #DCDCDC; padding:10px; box-shadow:0px 2px 1px rgba(0,0,0,0.1);}
-.empoll-new{min-height:100px;width:900px; border-radius:5px; background-color:white; margin:20px auto; border:1px solid #DCDCDC; padding:10px; box-shadow:0px 2px 1px rgba(0,0,0,0.1); overflow:auto;}
+
+.empoll-new{min-height: 100px;
+width: 900px;
+background-color: white;
+margin: 20px auto;
+border: 1px solid #DCDCDC;
+padding: 10px;
+overflow: auto;}
+
 .question_side{float:left;}
 .edit_side{float:right; margin-top:35px; width:100px;}
-.greenheader a{color:#50b295; font-size:24px; text-decoration:none; font-family:'Signika', sans-serif; line-height:30px;}
+.greenheader a{color:#fbca05; font-size:24px; text-decoration:none; font-family:'Signika', sans-serif; line-height:30px;}
 .lightgrey{color:#777; font-family:'Signika', sans-serif; }
 h1,h2,h3,h4{font-family: 'Signika', sans-serif; }
 .center-div{margin:0 auto;}
@@ -435,4 +446,4 @@ font-weight: 300;
 text-align:justify;
 }
 
-.smallesttext a{ color:#999; }
+.smallesttext a{ color:#999; text-decoration:none !important;}
