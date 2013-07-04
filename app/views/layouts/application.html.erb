@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Pollled - Your one stop polling destination!</title>
-  <link href='http://fonts.googleapis.com/css?family=Signika:700,600,400,300' rel='stylesheet' type='text/css'>
+
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
 <meta property="og:image" content="http://i42.tinypic.com/2wf74tx.png" />
@@ -13,7 +13,7 @@
 <meta name="Title" content="Poll: <%="#{@epoll.question}"%>">
 <%end%>
   <%= csrf_meta_tags %>
-<link href='http://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Signika:700,600,400,300' rel='stylesheet' type='text/css'>
 </head>
 <body>
 <%if Rails.env.production? %>
@@ -56,7 +56,7 @@
 	<span class="smallesttext"><%=link_to "Privacy Policy", policy_path%></span><br/>
 	<br/></div>
 <div class="footer2">
-<div class="pfb"></div><div class="ptw"></div><div class="psi"></div>
+<a href="https://www.facebook.com/pages/Pollled/677102765641499"><div class="pfb"></div></a><a href="https://twitter.com/Pollled"><div class="ptw"></div></a><a href="http://sizr.net"><div class="psi"></div></a>
 </div>
 </div>
 </body>
