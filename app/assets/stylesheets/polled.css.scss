@@ -215,7 +215,15 @@ font-weight: 700;}
 #loginmenu a,#loginmenu a:visited{color:white;background-color:none; text-decoration: none !important;}
 #loginmenu a:hover{color:#fbca05;background-color:none; text-decoration: none !important;}
 
-.footer{text-align:center; color:#888; margin-top:50px; clear:both; font-family:'Signika', sans-serif; }
+.footer{margin-top:50px; height:33px; width:100%; clear:both; font-family:'Signika', sans-serif; }
+.footer1{float:left;height:33px; width:45%; text-align:left; margin-left:10px; font-family: 'Signika', sans-serif; font-weight:600; font-size:20px; color:#282828;}
+.footer2{float:right;height:33px; width:189px; margin-right:10px;}
+.pfb{float:left;height:33px; width:63px;background-image:image-url("pfb.png"); position:absolute;}
+.pfb a:hover{background-image:image-url("pfbh.png");}
+.ptw{float:left;height:33px; width:63px;background-image:image-url("ptw.png"); position:absolute;}
+.ptw a:hover{background-image:image-url("ptwh.png");}
+.psi{float:left;height:33px; width:63px;background-image:image-url("psi.png"); position:absolute;}
+.psi a:hover{background-image:image-url("psih.png");}
 .container{width:1024px;margin:60px auto; min-height:300px; }
 h1{font-family: 'Signika', sans-serif; font-weight:700; font-size:70px; color:#282828;}
 h2{font-family: 'Signika', sans-serif; font-weight:400; font-size:20px; color:#373636}
