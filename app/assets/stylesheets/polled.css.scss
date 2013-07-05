@@ -135,14 +135,15 @@ color:#444;
   }
 }
 
+
 .authentications {
   margin-bottom: 30px;
 }
 
 .authentication {
   width: 350px;
-  background-color: #fde480;
-  border: solid 1px #gbca05;
+  background-color: #EEE;
+  border: solid 1px #999;
   padding: 5px 10px;
   position: relative;
   margin: 0 auto;
@@ -157,10 +158,11 @@ color:#444;
   padding: 2px 4px;
   font-size: 10px;
 }
-.field_with_errors{background-color:#fd9db1;}
+.field_with_errors{background-color:transparent;}
 .authentication .remove:hover {
   color: #CCC;
-  background-color: #ff0036;
+  background-color: #777;
+
 }
 
 .authentication img {
