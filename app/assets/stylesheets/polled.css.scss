@@ -93,12 +93,12 @@ div {
 #notice {
   font-family: 'Signika', sans-serif;
   font-size:16px;
-  color: #afd139;
+  color: #fe0231;
 }
 .notice {
   font-family: 'Signika', sans-serif;
   font-size:16px;
-  color: #afd139;
+  color: #fe0231;
 margin-top:20px;
 
 margin-bottom:20px;
@@ -107,7 +107,7 @@ margin-bottom:20px;
 
 .field_with_errors {
   padding: 2px;
-  background-color: red;
+  background-color: #fe0231;
   display: table;
 }
 
@@ -144,8 +144,6 @@ color:#444;
   background-color: #EEE;
   border: solid 1px #999;
   padding: 5px 10px;
-  -moz-border-radius: 8px;
-  -webkit-border-radius: 8px;
   position: relative;
   margin: 0 auto;
 }
@@ -163,8 +161,6 @@ color:#444;
 .authentication .remove:hover {
   color: #CCC;
   background-color: #777;
-  -moz-border-radius: 6px;
-  -webkit-border-radius: 6px;
 }
 
 .authentication img {
@@ -328,13 +324,13 @@ width:90% !important; }
 .submit_vote:hover{cursor:pointer; opacity:0.8;}
 .formtastic .actions{padding:0px !important; margin:0 auto; width:156px; }
 .formtastic .inputs {margin: 30px auto 50px auto !important;}
-.already-cast{ width:200px; margin:50px auto 50px auto; background-color:#52ba9a; height:20px; line-height:20px; color:white; text-shadow:0px 1px 3px #555; border-radius:5px; }
+.already-cast{ width:200px; margin:50px auto 50px auto; background-color:#fbca05; height:20px; line-height:20px; color:white;}
 .ordinal{color:#929292; font-size:14px; font-family:'Signika', sans-serif;}
 table.listpoll{ margin:0 auto; width:900px;}
 a.icon_edit{text-indent:-9999px; background-image:image-url("edit_icon.png"); width:31px; height:31px; display:inline-block;}
 a.icon_destroy{margin-left:10px;text-indent:-9999px; background-image:image-url("destroy_icon.png"); width:31px; height:31px; display:inline-block;}
 a.icon_edit:hover, a.icon_destroy:hover{opacity:0.7; filter:alpha(opacity=70); }
-.empoll{height:100px;width:900px; border-radius:5px; background-color:white; margin:20px auto; border:1px solid #DCDCDC; padding:10px; box-shadow:0px 2px 1px rgba(0,0,0,0.1);}
+.empoll{height:100px;width:900px; background-color:white; margin:20px auto; border:1px solid #DCDCDC; padding:10px;}
 
 .empoll-new{min-height: 100px;
 width: 900px;
@@ -359,8 +355,7 @@ h1,h2,h3,h4{font-family: 'Signika', sans-serif; }
 border:1px solid #b9b9b9;
 height:70px; width:790px; font-size:24px; line-height:24px; padding:5px; color:#999;}
 .long-text input:focus{
-border:1px solid limegreen;
- box-shadow: inset 0 1px 2px rgba(0,0,0,0.1),0 0 5px rgba(81,167,232,0.5);
+border:1px solid #fbac05;
  outline: none;}
 .long-text{width:810px; margin:20px auto; }
 .greenheader{width:750px;}
@@ -380,18 +375,16 @@ border:1px solid limegreen;
 .span10{ width:220px; margin:20px auto; }
 .span10 input{color:#999;width:220px; border:1px solid #b9b9b9;}
 .span10 input:focus{
-border:1px solid limegreen;
- box-shadow: inset 0 1px 2px rgba(0,0,0,0.1),0 0 5px rgba(81,167,232,0.5);
+border:1px solid #fbca05;
  outline: none;}
 
 
 .span20{ width:580px; margin:20px auto;}
 .span20 input{color:#999; padding-left:5px; padding-right:5px; font-size:16px;width:310px; border:1px solid #b9b9b9; margin-left:100px; margin-right:10px; margin-top:20px; margin-bottom:20px; height:50px;}
 .span20 input:focus{
-border:1px solid limegreen;
- box-shadow: inset 0 1px 2px rgba(0,0,0,0.1),0 0 5px rgba(81,167,232,0.5);
+border:1px solid #fbca05;
  outline: none;}
-.add_option {margin-top:20px ; display:block; width:100px; margin-left:auto; margin-right:auto; background-color:#999;  padding:5px 10px 5px 10px; color:white; text-decoration:none; text-shadow:0px 1px 3px rgba(0,0,0,0.7);
+.add_option {margin-top:20px ; display:block; width:100px; margin-left:auto; margin-right:auto; background-color:#999;  padding:5px 10px 5px 10px; color:white; text-decoration:none; 
  font-size:12px;
 }
 .sub_button {
@@ -419,7 +412,7 @@ font-weight: bold !important;
 .sub_button:hover{color:white; opacity:0.9; filter:alpha(opacity=90);}
 .span500{width:700px; margin-top:70px !important;}
 .span500 input[type=email], .span500 input[type=password]{outline:none; border:1px solid #bcbcbc; width:390px; height:20px; font-size:14px; color:#999; padding:5px; margin:0 auto;}
-.span500 input[type=email]:focus, .span500 input[type=password]:focus{border:1px solid limegreen; box-shadow: inset 0 1px 2px rgba(0,0,0,0.1),0 0 5px rgba(81,167,232,0.5);}
+.span500 input[type=email]:focus, .span500 input[type=password]:focus{border:1px solid #fbca05;}
 .span500ip{width:400px; margin:0 auto;}
 
 .graytext{color: #2d2f31;
