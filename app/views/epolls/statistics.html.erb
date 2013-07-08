@@ -1,6 +1,6 @@
 <div class="center-text"><h2> Statistics for Poll: "<%=@epoll.question %>"</h2></div>
 <div class="empoll-new">
-<p class="graytext">
+<p class="stattext">
 	<br/>
 	Total options:
 	<%=@epoll.options.count%> <br/>
@@ -22,8 +22,8 @@ Top Browser:
 <h2> Option breakdown </h2>
 
 <%@epoll.options.each do |option|%>
-<strong>Option Name: <%=option.name%></strong>
-<p class="graytext">
+<p class="statheader">Option Name: <%=option.name%></p>
+<p class="stattext">
 Votes Cast: <%=@temp_cnt = option.votes_count%> <br/>
 Top Country: <%=option.votes.flat_map(&:location).max || "Not enough votes on this option to determine this."%><br/>
 Top City: <%=option.votes.flat_map(&:city).max || "Not enough votes on this option to determine this."%><br/>

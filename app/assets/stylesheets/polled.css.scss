@@ -158,10 +158,14 @@ color:#444;
   padding: 2px 4px;
   font-size: 10px;
 }
+
+
+
 .field_with_errors{background-color:transparent;}
+
 .authentication .remove:hover {
-  color: #CCC;
-  background-color: #777;
+  color: white;
+  background-color: #dd8a8a;
 
 }
 
@@ -454,6 +458,21 @@ font-size: 15px !important;
 font-family: 'Signika', sans-serif;
 font-weight: 300;
 text-align:justify;
+}
+
+.stattext{color: #575757;
+left: 50%;
+font-size: 15px !important;
+font-family: 'Signika', sans-serif;
+font-weight: 600;
+line-height: 42px;}
+
+.statheader{color: #333;
+font-size: 17px !important;
+font-family: 'Signika', sans-serif;
+font-weight: 400;
+color: #fbca05;
+line-height:18px;
 }
 
 .smallesttext a{ color:#999; text-decoration:none !important;}
