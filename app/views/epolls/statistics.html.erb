@@ -32,6 +32,7 @@ Top Browser: <%=option.votes.flat_map(&:browser).max || "Not enough votes on thi
 <%@count =0 %>
 Percentage mobile users: <%option.votes.flat_map(&:is_mobile).each {|n| @count+= 1 if n}|| "Not enough votes on this option to determine this."%><%= @temp_cnt==0?"No Statistics":"#{(@count/@temp_cnt)*100}%"  %><br/></p>
 <%end%>
+<br/>
 </div>
 
 
