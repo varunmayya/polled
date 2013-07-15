@@ -5,4 +5,6 @@ class HomefrontController < ApplicationController
   end
   def idea
   end
+  def about
+  end
 end
